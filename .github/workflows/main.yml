@@ -19,10 +19,22 @@ jobs:
     # 指出这个build任务的步骤
     steps:
 
-      # 步骤，这里只写了一个步骤，目的是输出hello github acition
+    # 首先copy git仓库到虚拟机上
+      - name: Checkout
+        uses: actions/checkout@v2
+		
+		
+        # 安装初始化python
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+
+
       - name: 'Install requests'
         run: pip install requests
+		
         # 运行脚本
       - name: 'Working'
         run: python ./action.py
-
