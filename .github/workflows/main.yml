@@ -20,5 +20,9 @@ jobs:
     steps:
 
       # 步骤，这里只写了一个步骤，目的是输出hello github acition
-      - name: Run a one-line script
-        run: python action.py
+      - name: 'Install requests'
+        run: pip install requests
+        # 运行脚本
+      - name: 'Working'
+        run: python ./action.py
+
